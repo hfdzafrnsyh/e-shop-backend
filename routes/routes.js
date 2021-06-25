@@ -14,7 +14,10 @@ const routes = (router) => {
     router.use("/api", product);
 
     router.get('/api', (req, res) => {
-        res.send('Hello From Root')
+        res.send('Hello From Api')
+    })
+    router.get('/', (req, res) => {
+        res.send('Hello From root')
     })
 
 }
