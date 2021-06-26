@@ -2,16 +2,16 @@ const mongoose = require("mongoose");
 
 const uri = process.env.URI;
 
-mongoose.connect(uri || 'mongodb://localhost/db_e-shop', {
+mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,
+    useCreateIndex: true,
     dbName: process.env.DB_NAME
-
 })
+    .then(() => {
+        console.log("MongoDB Connect Successully")
+    })
+    .catch(err => {
+        console.log("MongoDB Error" + err)
+    })
 
-const connection = mongoose.connection;
-
-connection.once('open', () => {
-    console.log('MongoDB connect Successfully');
-});
