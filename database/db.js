@@ -2,11 +2,10 @@ const mongoose = require("mongoose");
 
 const uri = process.env.URI;
 
-mongoose.connect(uri, {
+mongoose.connect(uri || 'mongodb://localhost/db_e-shop', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
-    useCreateIndex: true,
     dbName: process.env.DB_NAME
 
 })
