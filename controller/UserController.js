@@ -153,3 +153,30 @@ module.exports.removeUser = (req, res) => {
         })
 
 }
+
+
+module.exports.detailUser = (req, res) => {
+    User.findById(req.params.id)
+        .then(user => {
+            if (!user) {
+                res.status(404).json({
+                    success: false,
+                    message: "User not found"
+                })
+            }
+
+            return res.status(200).json({
+                success: true,
+                message: "Detail User ",
+                users: user
+            })
+
+        })
+        .catch(err => {
+            res.status(500).json({
+                success: false,
+                message: `Internal Server Error`,
+                error: err
+            })
+        })
+}

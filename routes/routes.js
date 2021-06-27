@@ -13,10 +13,13 @@ const routes = (router) => {
     router.use("/api", product);
 
     router.get('/api', (req, res) => {
-        res.send('Hello From Api , Please Login for get data or test get' + `<br>` + `<a href=" https://e-shop-nodes.herokuapp.com/api/product">https://e-shop-nodes.herokuapp.com/api/product</a>`)
+        res.send(`<p align=center>
+        
+        Hello from Api , Please Login for get data or test get <br> <a href=" https://e-shop-nodes.herokuapp.com/api/product">https://e-shop-nodes.herokuapp.com/api/product</a>
+                </p>`)
     })
     router.get('/', (req, res) => {
-        res.send('Hello From root')
+        res.send('Hello from root')
     })
 
 }

@@ -12,6 +12,7 @@ router.get('/user', UserController.getUserList);
 router.post('/register', UserController.registerUser);
 router.post('/login', UserController.login);
 router.get('/user/get/count', UserController.userCount);
+router.get('/user/:id', UserController.detailUser);
 router.delete('/user/:id', UserController.removeUser);
 
 module.exports = router;
