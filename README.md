@@ -1,11 +1,11 @@
 #### Hi, There 👋 
 
-#####  Get no Auth
+#####  Get no Authentication
 <a href="https://e-shop-nodes.herokuapp.com/api/product">https://e-shop-nodes.herokuapp.com/api/product</a>
 
 <a href="https://e-shop-nodes.herokuapp.com/api/category">https://e-shop-nodes.herokuapp.com/api/category</a>
  
-#### Auth 
+#### Authentication 
 <p>
 <a href="https://e-shop-nodes.herokuapp.com/api/register">https://e-shop-nodes.herokuapp.com/api/register</a>
 
