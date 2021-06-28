@@ -8,6 +8,9 @@
 <a href="https://e-shop-nodes.herokuapp.com/api/category">https://e-shop-nodes.herokuapp.com/api/category</a>
  
 #### Authentication 
+
+###### set IsAdmin=true
+
 <a href="https://e-shop-nodes.herokuapp.com/api/register">https://e-shop-nodes.herokuapp.com/api/register</a>
 
 <a href="https://e-shop-nodes.herokuapp.com/api/login">https://e-shop-nodes.herokuapp.com/api/login</a>
