@@ -9,7 +9,7 @@
  
 #### Authentication 
 
-###### set IsAdmin=true
+###### setting IsAdmin=true
 
 <a href="https://e-shop-nodes.herokuapp.com/api/register">https://e-shop-nodes.herokuapp.com/api/register</a>
 
