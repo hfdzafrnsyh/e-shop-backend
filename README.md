@@ -8,12 +8,9 @@
 
 <a href="https://e-shop-nodes.herokuapp.com/api/category">https://e-shop-nodes.herokuapp.com/api/category</a>
  
-## Authentication 
-
-#### Test with Postman
- #### method POST
+#### POST Authentication
  
-###### setting IsAdmin=true
+ ###### setting IsAdmin=true
 
 <a href="https://e-shop-nodes.herokuapp.com/api/register">https://e-shop-nodes.herokuapp.com/api/register</a>
 
