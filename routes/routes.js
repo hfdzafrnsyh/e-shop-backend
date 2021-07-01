@@ -1,4 +1,6 @@
 
+'use-strict';
+
 const users = require('./api/UserRoutes');
 const product = require('./api/ProductRoutes');
 const category = require("./api/CategoryRoutes");
