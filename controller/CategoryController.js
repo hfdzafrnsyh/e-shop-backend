@@ -77,11 +77,23 @@ module.exports.getCategoryById = (req, res) => {
 
 module.exports.updateCategory = (req, res) => {
 
+    // imageUpdate
+    const files = req.file;
+    let imagePath;
+
+    if (files) {
+        const fileName = files.filename;
+        const basePath = `${req.protocol}://${req.get('host')}/public/upload/icon/`;
+        imagePath = `${basePath}${fileName}`;
+    } else {
+        imagePath = category.imageIcon;
+    }
+
     Category.findByIdAndUpdate(req.params.id)
         .then(category => {
             category.name = req.body.name,
                 category.color = req.body.color,
-                category.imageIcon = req.body.imageIcon
+                category.imageIcon = imagePath
 
             category.save()
                 .then((categories) => res.status(200).json({
