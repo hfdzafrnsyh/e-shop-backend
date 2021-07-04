@@ -10,8 +10,9 @@ const CategorySchema = new mongoose.Schema({
     color: {
         type: String,
     },
-    icon: {
+    imageIcon: {
         type: String,
+        default: "iconDefault.png"
     }
 },
     {

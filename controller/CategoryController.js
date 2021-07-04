@@ -8,7 +8,7 @@ module.exports.getCategory = (req, res) => {
             category: category.map(categories => ({
                 _id: categories.id,
                 name: categories.name,
-                icon: categories.icon
+                imageIcon: categories.imageIcon
             }))
         }))
         .catch(err => res.status(500).json({
@@ -21,11 +21,23 @@ module.exports.getCategory = (req, res) => {
 
 module.exports.addCategory = (req, res) => {
 
+
+    const files = req.file;
+    const imageName = req.file.filename;
+    const basePath = `${req.protocol}://${req.get('host')}/public/upload/icon/`
+
     let newCategory = new Category({
         name: req.body.name,
         color: req.body.color,
-        icon: req.body.icon
+        imageIcon: `${basePath}${imageName}`
     })
+
+    if (!files) {
+        return res.status(404).json({
+            success: false,
+            message: "Error , Nothing Image"
+        })
+    }
 
     newCategory.save()
         .then(categories => res.status(201).json({
@@ -69,7 +81,7 @@ module.exports.updateCategory = (req, res) => {
         .then(category => {
             category.name = req.body.name,
                 category.color = req.body.color,
-                category.icon = req.body.icon
+                category.imageIcon = req.body.imageIcon
 
             category.save()
                 .then((categories) => res.status(200).json({
