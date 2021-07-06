@@ -14,7 +14,7 @@ module.exports.getProduct = (req, res) => {
         filter = { name: { '$regex': req.query.name, $options: 'i' } }
     }
 
-    Product.find(filter).select('name image brand price rating')
+    Product.find(filter).select('name image brand price rating category')
         .populate('category')
         .then(product => res.status(200).json({
             success: true,
