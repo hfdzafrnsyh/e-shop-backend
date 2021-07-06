@@ -1,16 +1,20 @@
 const Category = require("../models/CategoryModel")
+const Product = require('../models/ProductModel');
 
 module.exports.getCategory = (req, res) => {
 
-    Category.find()
-        .then(category => res.status(200).json({
-            success: true,
-            category: category.map(categories => ({
-                _id: categories.id,
-                name: categories.name,
-                imageIcon: categories.imageIcon
-            }))
-        }))
+    let filter;
+    if (req.query.name) {
+        filter = { name: { '$regex': req.query.name, $options: 'i' } }
+    }
+
+    Category.find(filter).select('name imageIcon')
+        .then(category => {
+            res.status(200).json({
+                success: true,
+                category: category
+            })
+        })
         .catch(err => res.status(500).json({
             success: false,
             error: err
@@ -139,4 +143,29 @@ module.exports.removeCategory = (req, res) => {
             error: err
         }))
 
+}
+
+
+module.exports.getProductByCategoryId = (req, res) => {
+
+    let categories;
+
+    if (req.params.id) {
+        categories = { category: req.params.id }
+    }
+
+
+    Product.find(categories).select('name image category')
+        .then(product => {
+            return res.status(200).json({
+                success: true,
+                product: product
+            })
+        })
+        .catch(error =>
+            res.status(500).json({
+                success: false,
+                error: error
+            })
+        )
 }

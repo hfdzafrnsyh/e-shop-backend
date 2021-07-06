@@ -14,6 +14,7 @@ router.get("/category/:id", CategoryController.getCategoryById);
 router.post("/category/add", ...middlewareCategory, CategoryController.addCategory);
 router.put("/category/:id", ...middlewareCategory, CategoryController.updateCategory);
 router.delete("/category/:id", CategoryController.removeCategory);
+router.get('/category/:id/product', CategoryController.getProductByCategoryId);
 
 module.exports = router;
 

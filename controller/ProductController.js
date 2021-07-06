@@ -5,11 +5,16 @@ const Product = require("../models/ProductModel");
 module.exports.getProduct = (req, res) => {
 
     let filter = {};
+
+
     if (req.query.categories) {
         filter = { category: req.query.categories.split(',') }
+
+    } else if (req.query.name) {
+        filter = { name: { '$regex': req.query.name, $options: 'i' } }
     }
 
-    Product.find(filter).select('name image')
+    Product.find(filter).select('name image brand price rating')
         .populate('category')
         .then(product => res.status(200).json({
             success: true,
