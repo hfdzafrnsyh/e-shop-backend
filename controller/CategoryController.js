@@ -155,7 +155,7 @@ module.exports.getProductByCategoryId = (req, res) => {
     }
 
 
-    Product.find(categories).select('name image category')
+    Product.find(categories).select('name image brand rating price category')
         .then(product => {
             return res.status(200).json({
                 success: true,
