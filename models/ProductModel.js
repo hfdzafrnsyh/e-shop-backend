@@ -51,7 +51,7 @@ const ProductSchema = new mongoose.Schema({
         max: 255
     },
     rating: {
-        type: Number,
+        type: mongoose.Schema.Types.Decimal128,
         default: 0
     },
     isFeatured: {
