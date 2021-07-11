@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require('mongoose-double')(mongoose);
 require('../database/db');
 
 
@@ -51,7 +52,7 @@ const ProductSchema = new mongoose.Schema({
         max: 255
     },
     rating: {
-        type: mongoose.Schema.Types.Decimal128,
+        type: mongoose.Schema.Types.Double,
         default: 0
     },
     isFeatured: {
