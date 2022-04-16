@@ -28,7 +28,7 @@
  
  <a href="#">https://e-shop-nodes.herokuapp.com/api/product/add</a>
 
-  <a href="#">https://e-shop-nodes.herokuapp.com/api/product/category/add</a>
+  <a href="#">https://e-shop-nodes.herokuapp.com/api/category/add</a>
  
   
 </p>
